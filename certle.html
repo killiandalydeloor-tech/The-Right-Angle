@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CERTLE — The Right Angle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="certle.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-angle">∠</span>
+      <span class="logo-text">The Right Angle</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#subjects">Subjects</a></li>
+      <li><a href="certle.html" style="color:var(--gold)">CERTLE</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#tutoring">Tutoring</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Get Started</a>
+    <button class="nav-burger" aria-label="Open menu">&#9776;</button>
+  </nav>
+
+  <!-- CERTLE HEADER -->
+  <header class="certle-header">
+    <div class="certle-header-bg"></div>
+    <div class="certle-header-content">
+      <div class="certle-brand">
+        <span class="certle-logo-big">∠</span>
+        <div>
+          <h1 class="certle-title">CERTLE</h1>
+          <p class="certle-tagline">One question. Three lives. No excuses.</p>
+        </div>
+      </div>
+      <div class="certle-meta">
+        <div class="meta-item">
+          <span class="meta-label">Today's Challenge</span>
+          <span class="meta-val" id="certle-date"></span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">Your Streak</span>
+          <span class="meta-val" id="streak-display">🔥 0</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">Subject</span>
+          <span class="meta-val">Higher Maths</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN GAME AREA -->
+  <main class="certle-main">
+
+    <!-- LIVES -->
+    <div class="lives-bar">
+      <span class="lives-label">Lives</span>
+      <div class="lives-icons">
+        <span class="life" id="life-1">∠</span>
+        <span class="life" id="life-2">∠</span>
+        <span class="life" id="life-3">∠</span>
+      </div>
+      <span class="lives-label" id="attempts-left">3 remaining</span>
+    </div>
+
+    <!-- QUESTION CARD -->
+    <div class="question-card" id="question-card">
+      <div class="question-header">
+        <span class="q-subject-tag" id="q-type-tag">Higher Maths</span>
+        <div class="question-timer-wrap">
+          <span class="timer-label">Time</span>
+          <span class="question-timer" id="game-timer">0:00</span>
+        </div>
+      </div>
+
+      <div class="question-body">
+        <p class="question-eyebrow">Today's Question</p>
+        <p class="question-text" id="question-text"></p>
+        <div class="question-formula" id="question-formula"></div>
+      </div>
+
+      <!-- MCQ OPTIONS -->
+      <div class="mcq-options hidden" id="mcq-options">
+        <button class="mcq-btn" data-val="A" onclick="submitMCQ('A')"><span class="mcq-letter">A</span><span class="mcq-text" id="opt-a"></span></button>
+        <button class="mcq-btn" data-val="B" onclick="submitMCQ('B')"><span class="mcq-letter">B</span><span class="mcq-text" id="opt-b"></span></button>
+        <button class="mcq-btn" data-val="C" onclick="submitMCQ('C')"><span class="mcq-letter">C</span><span class="mcq-text" id="opt-c"></span></button>
+        <button class="mcq-btn" data-val="D" onclick="submitMCQ('D')"><span class="mcq-letter">D</span><span class="mcq-text" id="opt-d"></span></button>
+      </div>
+
+      <!-- NUMERICAL INPUT -->
+      <div class="num-input-wrap hidden" id="num-input-wrap">
+        <div class="num-input-row">
+          <input type="text" id="num-answer" class="num-input" placeholder="Type your answer..." autocomplete="off" />
+          <button class="submit-btn" onclick="submitNumerical()">Submit →</button>
+        </div>
+        <p class="input-hint" id="input-hint"></p>
+      </div>
+
+      <!-- ATTEMPT HISTORY -->
+      <div class="attempt-history" id="attempt-history"></div>
+    </div>
+
+    <!-- LEADERBOARD PREVIEW -->
+    <div class="leaderboard-card">
+      <div class="lb-header">
+        <h3 class="lb-title">∠ Leaderboard</h3>
+        <div class="lb-tabs">
+          <button class="lb-tab lb-tab-active" onclick="switchLB('friends')">Friends</button>
+          <button class="lb-tab" onclick="switchLB('national')">National</button>
+        </div>
+      </div>
+
+      <!-- FRIENDS LB -->
+      <div id="lb-friends">
+        <div class="lb-you-row">
+          <span class="lb-rank">—</span>
+          <span class="lb-name">You</span>
+          <span class="lb-status lb-pending">Play to rank</span>
+        </div>
+        <div class="lb-divider"></div>
+        <div class="lb-row">
+          <span class="lb-rank gold">1</span>
+          <span class="lb-name">Aoife M.</span>
+          <span class="lb-status lb-correct">✓ 1:24</span>
+        </div>
+        <div class="lb-row">
+          <span class="lb-rank silver">2</span>
+          <span class="lb-name">Ciarán B.</span>
+          <span class="lb-status lb-correct">✓ 2:07</span>
+        </div>
+        <div class="lb-row">
+          <span class="lb-rank bronze">3</span>
+          <span class="lb-name">Siobhán K.</span>
+          <span class="lb-status lb-correct">✓ 3:41</span>
+        </div>
+        <div class="lb-row lb-row-muted">
+          <span class="lb-rank">4</span>
+          <span class="lb-name">Tadhg R.</span>
+          <span class="lb-status lb-wrong">✗ No lives</span>
+        </div>
+        <div class="lb-row lb-row-muted">
+          <span class="lb-rank">5</span>
+          <span class="lb-name">Niamh F.</span>
+          <span class="lb-status lb-pending">Not played</span>
+        </div>
+        <div class="lb-invite">
+          <a href="#" class="lb-invite-btn">+ Invite Friends</a>
+          <span class="lb-invite-note">Coming with CERTLE Pro</span>
+        </div>
+      </div>
+
+      <!-- NATIONAL LB -->
+      <div id="lb-national" class="hidden">
+        <div class="lb-you-row">
+          <span class="lb-rank">—</span>
+          <span class="lb-name">You</span>
+          <span class="lb-status lb-pending">Play to rank</span>
+        </div>
+        <div class="lb-divider"></div>
+        <div class="national-stat">
+          <p class="nat-stat-label">Today's players</p>
+          <p class="nat-stat-num" id="nat-players">1,247</p>
+        </div>
+        <div class="national-stat">
+          <p class="nat-stat-label">Solved it</p>
+          <p class="nat-stat-num">63%</p>
+        </div>
+        <div class="national-stat">
+          <p class="nat-stat-label">Average time</p>
+          <p class="nat-stat-num">3:12</p>
+        </div>
+        <div class="lb-invite">
+          <span class="lb-invite-note">Full leaderboard unlocks after you play</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== POPUPS ==================== -->
+
+  <!-- WRONG ANSWER POPUP -->
+  <div class="popup-overlay hidden" id="wrong-popup">
+    <div class="popup-box popup-wrong">
+      <div class="popup-emoji" id="wrong-emoji">😬</div>
+      <h2 class="popup-title" id="wrong-title">Not quite!</h2>
+      <p class="popup-msg" id="wrong-msg">That's not it — you have lives left. Try again!</p>
+      <div class="popup-lives-left" id="popup-lives-left"></div>
+      <button class="popup-btn" onclick="closePopup('wrong-popup')">Try Again →</button>
+    </div>
+  </div>
+
+  <!-- GAME OVER POPUP -->
+  <div class="popup-overlay hidden" id="gameover-popup">
+    <div class="popup-box popup-gameover">
+      <div class="popup-emoji">💀</div>
+      <h2 class="popup-title" id="gameover-title">Out of lives!</h2>
+      <p class="popup-msg" id="gameover-msg">Better luck tomorrow. The answer was revealed below.</p>
+      <div class="popup-streak-lost">
+        <span>🔥 Streak lost</span>
+      </div>
+      <button class="popup-btn" onclick="closePopup('gameover-popup'); showSolution()">See Solution →</button>
+    </div>
+  </div>
+
+  <!-- WIN POPUP -->
+  <div class="popup-overlay hidden" id="win-popup">
+    <div class="popup-box popup-win">
+      <div class="popup-emoji" id="win-emoji">🎉</div>
+      <h2 class="popup-title" id="win-title">Correct!</h2>
+      <p class="popup-msg" id="win-msg">Brilliant work. You solved today's CERTLE!</p>
+      <div class="win-stats">
+        <div class="win-stat">
+          <span class="win-stat-num" id="win-time">—</span>
+          <span class="win-stat-label">Your time</span>
+        </div>
+        <div class="win-stat">
+          <span class="win-stat-num" id="win-attempts">—</span>
+          <span class="win-stat-label">Attempts</span>
+        </div>
+        <div class="win-stat">
+          <span class="win-stat-num" id="win-streak">—</span>
+          <span class="win-stat-label">Streak 🔥</span>
+        </div>
+      </div>
+      <div class="win-percentile" id="win-percentile"></div>
+      <button class="popup-btn popup-btn-share" onclick="shareResult()">Share Result 📤</button>
+      <button class="popup-btn popup-btn-solution" onclick="closePopup('win-popup'); showSolution()">See Worked Solution →</button>
+    </div>
+  </div>
+
+  <!-- SOLUTION PANEL -->
+  <div class="solution-panel hidden" id="solution-panel">
+    <div class="solution-inner">
+      <div class="solution-header">
+        <h2 class="solution-title">Worked Solution</h2>
+        <button class="solution-close" onclick="hideSolution()">✕</button>
+      </div>
+      <div class="solution-body" id="solution-body"></div>
+      <div class="solution-footer">
+        <a href="maths.html" class="btn-primary">More Past Papers →</a>
+        <button class="btn-ghost" onclick="hideSolution()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" style="margin-top:4rem;">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-angle">∠</span>
+        <span class="logo-text">The Right Angle</span>
+        <p>Helping Irish students approach the Leaving Cert from the right angle.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Study</h4>
+          <a href="maths.html">Mathematics</a>
+          <a href="maths.html">Past Papers</a>
+          <a href="maths.html">Mock Exams</a>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="certle.html">CERTLE</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#tutoring">Tutoring</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 The Right Angle. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="certle.js"></script>
+</body>
+</html>
