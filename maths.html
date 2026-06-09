@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathematics — The Right Angle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="maths.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-angle">∠</span>
+      <span class="logo-text">The Right Angle</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#subjects">Subjects</a></li>
+      <li><a href="certle.html">CERTLE</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#tutoring">Tutoring</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Get Started</a>
+    <button class="nav-burger" aria-label="Open menu">&#9776;</button>
+  </nav>
+
+  <!-- SUBJECT HERO -->
+  <section class="subject-hero">
+    <div class="subject-hero-bg"></div>
+    <div class="subject-hero-content">
+      <a href="index.html" class="back-link">← All Subjects</a>
+      <div class="subject-title-row">
+        <span class="subject-hero-icon">∑</span>
+        <div>
+          <p class="section-eyebrow">Higher Level</p>
+          <h1 class="subject-hero-title">Mathematics</h1>
+        </div>
+      </div>
+      <p class="subject-hero-sub">
+        Past papers from 2015–2024, original mock exams in the new 2026 course format, in-depth video lessons, and the daily CERTLE challenge — everything for Higher Level Maths in one place.
+      </p>
+      <div class="level-badge">
+        <span class="level-dot"></span>
+        Higher Level Only — Ordinary Level coming soon
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <div class="tabs-inner">
+      <button class="tab-btn tab-active" data-tab="papers">
+        <span class="tab-icon">📄</span> Past Papers
+      </button>
+      <button class="tab-btn" data-tab="mocks">
+        <span class="tab-icon">✏️</span> Mock Exams
+      </button>
+      <button class="tab-btn" data-tab="lessons">
+        <span class="tab-icon">🎬</span> Lessons
+      </button>
+      <button class="tab-btn" data-tab="certle">
+        <span class="tab-icon">∠</span> CERTLE
+      </button>
+    </div>
+  </div>
+
+  <!-- TAB CONTENT WRAPPER -->
+  <main class="tab-content-area">
+
+    <!-- ===================== PAPERS TAB ===================== -->
+    <section class="tab-panel" id="tab-papers">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">Past Exam Papers</h2>
+          <p class="panel-sub">Official SEC papers 2015–2024, with video solutions. Papers link directly to examinations.ie.</p>
+        </div>
+        <div class="paper-notice">
+          <span>📌</span>
+          <p>Papers before 2015 follow the old Project Maths syllabus and are less relevant to today's course.</p>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+
+        <!-- 2024 -->
+        <div class="paper-card paper-card-latest">
+          <div class="paper-year-badge">Latest</div>
+          <div class="paper-year">2024</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2024/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2024/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2024P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2024P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="paper-card">
+          <div class="paper-year">2023</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2023/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2023/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2023P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2023P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="paper-card">
+          <div class="paper-year">2022</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2022/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2022/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2022P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2022P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="paper-card">
+          <div class="paper-year">2021</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2021/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2021/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2021P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2021P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="paper-card">
+          <div class="paper-year">2020</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2020/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2020/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2020P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2020P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="paper-card">
+          <div class="paper-year">2019</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2019/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2019/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2019P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2019P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="paper-card">
+          <div class="paper-year">2018</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2018/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2018/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2018P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2018P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="paper-card">
+          <div class="paper-year">2017</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2017/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2017/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2017P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2017P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2016 -->
+        <div class="paper-card">
+          <div class="paper-year">2016</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2016/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2016/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2016P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2016P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="paper-card">
+          <div class="paper-year">2015</div>
+          <div class="paper-info">
+            <h3>Leaving Cert Higher Maths</h3>
+            <p>Paper 1 &amp; Paper 2</p>
+          </div>
+          <div class="paper-actions">
+            <a href="https://www.examinations.ie/archive/exampapers/2015/LC003ALP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 1 ↗
+            </a>
+            <a href="https://www.examinations.ie/archive/exampapers/2015/LC003BLP000EV.pdf"
+               target="_blank" rel="noopener" class="paper-btn paper-btn-sec">
+              Paper 2 ↗
+            </a>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2015P1')">
+              ▶ Solution P1
+            </button>
+            <button class="paper-btn paper-btn-vid" onclick="openVideo('2015P2')">
+              ▶ Solution P2
+            </button>
+          </div>
+        </div>
+
+      </div><!-- end papers-grid -->
+    </section>
+
+    <!-- ===================== MOCKS TAB ===================== -->
+    <section class="tab-panel hidden" id="tab-mocks">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">Mock Exam Papers</h2>
+          <p class="panel-sub">Original mock papers written in the new 2026 Leaving Cert Maths format, with full video solutions and marking schemes.</p>
+        </div>
+        <div class="new-course-banner">
+          <span class="banner-star">★</span>
+          <div>
+            <strong>New 2026 Course Format</strong>
+            <p>These mocks are written for the revised syllabus — the SEC has no past papers for it yet. Get ahead.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mocks-grid">
+
+        <div class="mock-card">
+          <div class="mock-num">Mock 01</div>
+          <div class="mock-info">
+            <h3>Full Mock Paper — Set A</h3>
+            <p>Paper 1 &amp; Paper 2 · New course format · Full marking scheme</p>
+          </div>
+          <div class="mock-includes">
+            <span class="include-tag">📄 Paper 1</span>
+            <span class="include-tag">📄 Paper 2</span>
+            <span class="include-tag">✅ Marking Scheme</span>
+            <span class="include-tag">▶ Video Solutions</span>
+          </div>
+          <div class="mock-actions">
+            <span class="mock-price">€15 <span class="mock-price-note">full set</span></span>
+            <a href="index.html#pricing" class="btn-primary">Get Access</a>
+          </div>
+        </div>
+
+        <div class="mock-card mock-card-locked">
+          <div class="mock-num">Mock 02</div>
+          <div class="mock-info">
+            <h3>Full Mock Paper — Set B</h3>
+            <p>Paper 1 &amp; Paper 2 · New course format · Full marking scheme</p>
+          </div>
+          <div class="mock-includes">
+            <span class="include-tag">📄 Paper 1</span>
+            <span class="include-tag">📄 Paper 2</span>
+            <span class="include-tag">✅ Marking Scheme</span>
+            <span class="include-tag">▶ Video Solutions</span>
+          </div>
+          <div class="mock-actions">
+            <span class="mock-price">€15 <span class="mock-price-note">full set</span></span>
+            <a href="index.html#pricing" class="btn-primary">Get Access</a>
+          </div>
+        </div>
+
+        <!-- Coming soon mock -->
+        <div class="mock-card mock-card-soon">
+          <div class="mock-num">Mock 03</div>
+          <div class="mock-info">
+            <h3>Full Mock Paper — Set C</h3>
+            <p>Coming soon</p>
+          </div>
+          <span class="soon-badge">In Progress</span>
+        </div>
+
+        <div class="mock-card mock-card-soon">
+          <div class="mock-num">Mock 04</div>
+          <div class="mock-info">
+            <h3>Full Mock Paper — Set D</h3>
+            <p>Coming soon</p>
+          </div>
+          <span class="soon-badge">In Progress</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== LESSONS TAB ===================== -->
+    <section class="tab-panel hidden" id="tab-lessons">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">Video Lessons</h2>
+          <p class="panel-sub">In-depth topic-by-topic lessons for Higher Level Maths. Included with Full Access.</p>
+        </div>
+        <a href="index.html#pricing" class="btn-primary">Get Full Access — €30</a>
+      </div>
+
+      <div class="topics-grid">
+
+        <div class="topic-section">
+          <h3 class="topic-heading">Algebra &amp; Functions</h3>
+          <div class="lessons-list">
+            <div class="lesson-row lesson-free">
+              <div class="lesson-info">
+                <span class="lesson-num">01</span>
+                <div>
+                  <p class="lesson-title">Algebraic Manipulation &amp; Factorising</p>
+                  <p class="lesson-meta">24 min · Free preview</p>
+                </div>
+              </div>
+              <button class="lesson-play free-play" onclick="openVideo('lesson-01')">▶ Watch Free</button>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">02</span>
+                <div>
+                  <p class="lesson-title">Quadratic Equations &amp; the Discriminant</p>
+                  <p class="lesson-meta">31 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">03</span>
+                <div>
+                  <p class="lesson-title">Surds, Indices &amp; Logarithms</p>
+                  <p class="lesson-meta">28 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">04</span>
+                <div>
+                  <p class="lesson-title">Functions: Domain, Range &amp; Graphs</p>
+                  <p class="lesson-meta">35 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-section">
+          <h3 class="topic-heading">Calculus</h3>
+          <div class="lessons-list">
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">05</span>
+                <div>
+                  <p class="lesson-title">Differentiation from First Principles</p>
+                  <p class="lesson-meta">29 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">06</span>
+                <div>
+                  <p class="lesson-title">Rules of Differentiation</p>
+                  <p class="lesson-meta">33 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">07</span>
+                <div>
+                  <p class="lesson-title">Integration &amp; the Definite Integral</p>
+                  <p class="lesson-meta">38 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">08</span>
+                <div>
+                  <p class="lesson-title">Applications of Calculus</p>
+                  <p class="lesson-meta">42 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-section">
+          <h3 class="topic-heading">Complex Numbers &amp; Sequences</h3>
+          <div class="lessons-list">
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">09</span>
+                <div>
+                  <p class="lesson-title">Complex Numbers: Arithmetic &amp; Argand Diagram</p>
+                  <p class="lesson-meta">27 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">10</span>
+                <div>
+                  <p class="lesson-title">Arithmetic &amp; Geometric Sequences</p>
+                  <p class="lesson-meta">32 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-section">
+          <h3 class="topic-heading">Probability &amp; Statistics</h3>
+          <div class="lessons-list">
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">11</span>
+                <div>
+                  <p class="lesson-title">Probability: Fundamentals &amp; Counting</p>
+                  <p class="lesson-meta">30 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+            <div class="lesson-row lesson-locked">
+              <div class="lesson-info">
+                <span class="lesson-num">12</span>
+                <div>
+                  <p class="lesson-title">The Normal Distribution</p>
+                  <p class="lesson-meta">36 min · Full Access</p>
+                </div>
+              </div>
+              <span class="lesson-lock">🔒</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end topics-grid -->
+    </section>
+
+    <!-- ===================== CERTLE TAB ===================== -->
+    <section class="tab-panel hidden" id="tab-certle">
+      <div class="certle-tab-inner">
+        <div class="certle-tab-text">
+          <p class="section-eyebrow">Daily Challenge</p>
+          <h2 class="panel-title">CERTLE — Maths Edition</h2>
+          <p class="certle-tab-desc">One hard Higher Maths question every day. Solve it, build your streak, and see how you stack up on the leaderboard. A new question drops at midnight.</p>
+          <a href="certle.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Play Today's Question →</a>
+        </div>
+        <div class="certle-tab-preview">
+          <div class="certle-card" style="max-width:420px;">
+            <div class="certle-card-header">
+              <span class="certle-logo">∠ CERTLE</span>
+              <span class="certle-streak">🔥 Maths</span>
+            </div>
+            <div class="certle-question">
+              <p class="q-label">Sample Question — Higher Maths</p>
+              <p class="q-text">
+                Find the values of k for which the equation
+                <em>x² − 2kx + (k + 6) = 0</em> has two distinct real roots.
+              </p>
+            </div>
+            <div class="certle-input-row">
+              <input type="text" placeholder="Your answer..." class="certle-input" />
+              <button class="certle-submit">Submit</button>
+            </div>
+            <div class="certle-timer">
+              <span class="timer-label">Time</span>
+              <span class="timer-val" id="certle-tab-timer">5:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal-overlay hidden" id="video-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeVideo()">✕</button>
+      <p class="modal-label" id="modal-label">Solution Video</p>
+      <div class="modal-video-placeholder" id="modal-video">
+        <span>▶</span>
+        <p>Video solution coming soon.</p>
+        <p class="modal-hint">When you upload your solution to YouTube, paste the embed link here.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-angle">∠</span>
+        <span class="logo-text">The Right Angle</span>
+        <p>Helping Irish students approach the Leaving Cert from the right angle.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Study</h4>
+          <a href="#">Mathematics</a>
+          <a href="#">Past Papers</a>
+          <a href="#">Mock Exams</a>
+          <a href="#">Video Lessons</a>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="certle.html">CERTLE</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#tutoring">Tutoring</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 The Right Angle. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="maths.js"></script>
+</body>
+</html>
