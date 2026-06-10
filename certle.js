@@ -134,9 +134,27 @@ let currentQuestion = null;
 document.addEventListener('DOMContentLoaded', () => {
   setDateDisplay();
   loadStreak();
+  
+  // Check if already played BEFORE rendering the question
+  const playedDate = localStorage.getItem('certle_played_date');
+  const today = new Date().toDateString();
+  
+  if (playedDate === today) {
+    const result = localStorage.getItem('certle_today_result');
+    if (result) {
+      selectTodaysQuestion();
+      showAlreadyPlayed(result);
+      return; // stop here, don't run anything else
+    }
+  }
+  
+  // Not played yet — start the game normally
   selectTodaysQuestion();
-  checkAlreadyPlayed();
 });
+
+function checkAlreadyPlayed() {
+  // now handled in DOMContentLoaded above
+}
 
 function setDateDisplay() {
   const dateEl = document.getElementById('certle-date');
@@ -188,14 +206,7 @@ function renderQuestion(q) {
 }
 
 function checkAlreadyPlayed() {
-  const playedDate = localStorage.getItem('certle_played_date');
-  const today = new Date().toDateString();
-  if (playedDate === today) {
-    const result = localStorage.getItem('certle_today_result');
-    if (result) {
-      showAlreadyPlayed(result);
-    }
-  }
+  // now handled in DOMContentLoaded above
 }
 
 function showAlreadyPlayed(result) {
@@ -496,9 +507,8 @@ function resetStreak() {
 }
 
 function devReset() {
-  const keys = Object.keys(localStorage);
-  keys.forEach(key => localStorage.removeItem(key));
   localStorage.clear();
   sessionStorage.clear();
-  window.location.href = window.location.href.split('?')[0] + '?nocache=' + Date.now();
+  window.location.replace(window.location.pathname);
 }
+
