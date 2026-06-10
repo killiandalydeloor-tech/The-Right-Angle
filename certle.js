@@ -493,3 +493,11 @@ function incrementStreak() {
 function resetStreak() {
   localStorage.setItem('certle_streak', '0');
 }
+
+function devReset() {
+  localStorage.removeItem('certle_played_date');
+  localStorage.removeItem('certle_today_result');
+  localStorage.removeItem('certle_streak');
+  localStorage.removeItem('certle_last_won');
+  location.reload();
+}
