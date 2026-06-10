@@ -496,11 +496,9 @@ function resetStreak() {
 }
 
 function devReset() {
-  localStorage.removeItem('certle_played_date');
-  localStorage.removeItem('certle_today_result');
-  localStorage.removeItem('certle_streak');
-  localStorage.removeItem('certle_last_won');
-  localStorage.removeItem('certle_last_played');
+  const keys = Object.keys(localStorage);
+  keys.forEach(key => localStorage.removeItem(key));
+  localStorage.clear();
   sessionStorage.clear();
-  setTimeout(() => location.reload(), 300);
+  window.location.href = window.location.href.split('?')[0] + '?nocache=' + Date.now();
 }
