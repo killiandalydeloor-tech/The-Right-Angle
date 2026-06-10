@@ -50,6 +50,7 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
+.hidden { display: none !important; }
 
 /* ---- TYPOGRAPHY ---- */
 h1, h2, h3 {
