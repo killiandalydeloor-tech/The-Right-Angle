@@ -187,13 +187,14 @@ function renderQuestion(q) {
   startTimer();
 }
 
-// Check if already played today
 function checkAlreadyPlayed() {
   const playedDate = localStorage.getItem('certle_played_date');
   const today = new Date().toDateString();
   if (playedDate === today) {
     const result = localStorage.getItem('certle_today_result');
-    showAlreadyPlayed(result);
+    if (result) {
+      showAlreadyPlayed(result);
+    }
   }
 }
 
@@ -499,5 +500,7 @@ function devReset() {
   localStorage.removeItem('certle_today_result');
   localStorage.removeItem('certle_streak');
   localStorage.removeItem('certle_last_won');
-  location.reload();
+  localStorage.removeItem('certle_last_played');
+  sessionStorage.clear();
+  setTimeout(() => location.reload(), 300);
 }
