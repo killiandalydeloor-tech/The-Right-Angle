@@ -445,10 +445,3 @@ function resetStreak() {
   localStorage.setItem('certle_streak', '0');
 }
  
-// ---- DEV RESET (remove before launch) ----
-function devReset() {
-  localStorage.clear();
-  sessionStorage.clear();
-  window.location.replace(window.location.pathname);
-}
- 
